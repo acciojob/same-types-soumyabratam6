@@ -1,8 +1,11 @@
 function isSameType(value1, value2) {
    if (typeof(value1) == typeof(value2)) {
-  	return true;
-  } else if(Number.isNaN(value1) && Number.isNaN(value2)) {
-	return false;
+    if(Number.isNaN(value1) && Number.isNaN(value2)) {
+      return true;
+    } else if (Number.isNaN(value1) || Number.isNaN(value2)) {
+      return false;
+    }
+    return true;
   }
   return false;
 }
